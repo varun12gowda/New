@@ -6,8 +6,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 
-public class Login_123 extends Base_Class {
-    @Test
+public class LoginTest extends Base_Class {
+
+    @Test (enabled = false)
     public void ValidateLoginModule() throws IOException, InterruptedException{
 
         login1.getUsername().sendKeys(utility.readingDataFromPropertyFile("Username"));

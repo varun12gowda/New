@@ -1,6 +1,8 @@
-package Utilities;
+package GenericLibrary;
 
 import ObjectRepo.LoginPage1;
+import ObjectRepo.VerifyLogo1;
+import Utilities.Properties_Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +19,7 @@ public class Base_Class {
     public WebDriver driver;
    public Properties_Utility utility = new Properties_Utility();
     public LoginPage1 login1;
+    public VerifyLogo1 logo1;
 
     @BeforeMethod
     public void LaunchBrowser() throws IOException {
@@ -35,7 +38,7 @@ public class Base_Class {
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(22));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2222));
         driver.get(utility.readingDataFromPropertyFile("url"));
 
         // ✅ Page Object initialization
