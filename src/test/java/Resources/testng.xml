@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite">
+
+    <test name="Login Tests">
+        <packages>
+            <package name="LoginModel"/>
+        </packages>
+    </test>
+
+</suite>
