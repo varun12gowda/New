@@ -1,6 +1,7 @@
 package GenericLibrary;
 
 import ObjectRepo.LoginPage1;
+import ObjectRepo.SelectDropdown;
 import ObjectRepo.VerifyLogo1;
 import Utilities.Properties_Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -8,21 +9,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
 
 public class Base_Class {
 
-    public WebDriver driver;
+    public static WebDriver driver;
    public Properties_Utility utility = new Properties_Utility();
     public LoginPage1 login1;
     public VerifyLogo1 logo1;
+    public SelectDropdown dropdown1;
 
-    @BeforeMethod
-    public void LaunchBrowser() throws IOException {
+    @BeforeSuite
+    public void setUp()  throws IOException {
 
         String browser = utility.readingDataFromPropertyFile("browser");
 
@@ -38,14 +39,20 @@ public class Base_Class {
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2222));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(utility.readingDataFromPropertyFile("url"));
-
-        // ✅ Page Object initialization
-        login1 = new LoginPage1(driver);
     }
+        // ✅ Page Object initialization
+        //login1 = new LoginPage1(driver);
+//    @BeforeClass
+//    public void  initPage(){
+//            //login1 = new LoginPage1(driver);
+//            logo1 = new VerifyLogo1(driver);
+//            dropdown1 = new SelectDropdown(driver);
+//        }
 
-    @AfterMethod
+
+    @AfterSuite
     public void tearDown() {
         driver.quit();
     }

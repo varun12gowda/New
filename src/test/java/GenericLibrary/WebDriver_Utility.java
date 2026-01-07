@@ -1,12 +1,13 @@
 package GenericLibrary;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class WebDriver_Utility extends Base_Class {
-
+public class WebDriver_Utility {
+    WebDriver driver;
     public void dragAndDropDown(WebElement src, WebElement dest){
         Actions actions=new Actions(driver);
         actions.dragAndDrop(src, dest).perform();
