@@ -9,6 +9,9 @@ public class SelectDropdown {
     public SelectDropdown(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
+    @FindBy(id="pre_rand")
+    private WebElement refresh;
+
     @FindBy(id = "pre_button")
     private WebElement insertText;
 
@@ -30,5 +33,8 @@ public class SelectDropdown {
     }
     public WebElement getCopyButton(){
         return copyButton;
+    }
+    public WebElement getRefresh(){
+        return refresh;
     }
 }

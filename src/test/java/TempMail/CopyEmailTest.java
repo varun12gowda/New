@@ -12,18 +12,20 @@ import java.io.IOException;
 
 public class CopyEmailTest extends Base_Class {
     @Test
-    public void validateEmail() throws IOException, UnsupportedFlavorException {
+    public void validateEmail() throws IOException, UnsupportedFlavorException, InterruptedException {
         dropdown1 = new SelectDropdown(driver);
+        dropdown1.getRefresh().click();
+        Thread.sleep(1000);
         dropdown1.getInsertText().sendKeys(utility.readingDataFromPropertyFile("Emailname"));
         dropdown1.getDropDown().click();
         dropdown1.getChitsDrop().click();
         dropdown1.getCopyButton().click();
 
         Clipboard clipboard= Toolkit.getDefaultToolkit().getSystemClipboard();
-        String coppiedText=(String) clipboard.getData(DataFlavor.stringFlavor);
+        String CopiedText=(String) clipboard.getData(DataFlavor.stringFlavor);
 
  // String copyText=dropdown1.getCopyButton().getText();
-  System.out.println(coppiedText);
+  System.out.println("The email copied is "+ CopiedText);
 
     }
 }

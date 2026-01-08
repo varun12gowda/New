@@ -2,6 +2,7 @@ package GenericLibrary;
 
 import ObjectRepo.LoginPage1;
 import ObjectRepo.SelectDropdown;
+import ObjectRepo.SelectLanguageDropdown;
 import ObjectRepo.VerifyLogo1;
 import Utilities.Properties_Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,7 @@ public class Base_Class {
     public LoginPage1 login1;
     public VerifyLogo1 logo1;
     public SelectDropdown dropdown1;
+    public SelectLanguageDropdown languageDropdown;
 
     @BeforeSuite
     public void setUp()  throws IOException {

@@ -9,6 +9,7 @@
         <classes>
             <class name="TempMail.CopyEmailTest"/>
             <class name="TempMail.VerifyLogo"/>
+            <class name="TempMail.VerifyLanguageTest"/>
         </classes>
     </test>
 

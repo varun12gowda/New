@@ -8,6 +8,11 @@ import org.openqa.selenium.support.ui.Select;
 
 public class WebDriver_Utility {
     WebDriver driver;
+
+    public WebDriver_Utility(WebDriver driver) {
+        this.driver=driver;
+    }
+
     public void dragAndDropDown(WebElement src, WebElement dest){
         Actions actions=new Actions(driver);
         actions.dragAndDrop(src, dest).perform();
@@ -16,9 +21,9 @@ public class WebDriver_Utility {
         Actions actions =new Actions(driver);
         actions.contextClick().perform();
     }
-    public void doubletap(){
+    public void doubletap(WebElement element){
         Actions actions=new Actions(driver);
-        actions.doubleClick().perform();
+        actions.doubleClick(element).perform();
     }
     public void mouseHoveringOnElement(WebElement element){
         Actions actions=new Actions(driver);
