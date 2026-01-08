@@ -14,6 +14,7 @@ public class CopyEmailTest extends Base_Class {
     @Test
     public void validateEmail() throws IOException, UnsupportedFlavorException {
         dropdown1 = new SelectDropdown(driver);
+        dropdown1.getInsertText().sendKeys(utility.readingDataFromPropertyFile("Emailname"));
         dropdown1.getDropDown().click();
         dropdown1.getChitsDrop().click();
         dropdown1.getCopyButton().click();

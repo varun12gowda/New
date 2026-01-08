@@ -9,6 +9,9 @@ public class SelectDropdown {
     public SelectDropdown(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
+    @FindBy(id = "pre_button")
+    private WebElement insertText;
+
     @FindBy(xpath = "//button[@class=\"form-control dropdown-toggle\"]")
     private WebElement dropDown ;
 
@@ -18,6 +21,7 @@ public class SelectDropdown {
     @FindBy(xpath = "//button[@class=\"btn btn-green mx-auto\"]")
     private WebElement copyButton;
 
+    public WebElement getInsertText(){return insertText;}
     public WebElement getChitsDrop() {
         return chittiDrop;
     }
