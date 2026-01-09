@@ -64,4 +64,16 @@ public class VerifyLanguageTest extends Base_Class {
         }
         Assert.assertEquals(ActualGermanyTitle,ExpectedGermanyTitle,"The language is invalid expected "+ ExpectedGermanyTitle);
     }
+    @Test
+    public void valudateUkraineLanguage(){
+        languageDropdown.getLanguageButtonClick().click();
+        languageDropdown.getUkEngland().click();
+        String ActualEnglandTitle=languageDropdown.getTitleName().getText();
+        String ExpectedEnglandTitle="Ваша нова тимчасова адреса";
+
+        if(ActualEnglandTitle.equals(ExpectedEnglandTitle)){
+            System.out.println("The language is valid "+ ActualEnglandTitle);
+        }
+        Assert.assertEquals(ActualEnglandTitle,ExpectedEnglandTitle,"The language is invalid expected "+ ExpectedEnglandTitle);
+    }
 }

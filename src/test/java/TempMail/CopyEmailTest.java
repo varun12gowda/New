@@ -16,16 +16,19 @@ public class CopyEmailTest extends Base_Class {
         dropdown1 = new SelectDropdown(driver);
         dropdown1.getRefresh().click();
         Thread.sleep(1000);
-        dropdown1.getInsertText().sendKeys(utility.readingDataFromPropertyFile("Emailname"));
-        dropdown1.getDropDown().click();
-        dropdown1.getChitsDrop().click();
-        dropdown1.getCopyButton().click();
+        dropdown1.getInsertText().clear();
+        Thread.sleep(5000);
+//        dropdown1.getInsertText().sendKeys(utility.readingDataFromPropertyFile("Emailname"));
+//        dropdown1.getDropDown().click();
+//        dropdown1.getChitsDrop().click();
+//        dropdown1.getCopyButton().click();
 
-        Clipboard clipboard= Toolkit.getDefaultToolkit().getSystemClipboard();
-        String CopiedText=(String) clipboard.getData(DataFlavor.stringFlavor);
+//        Clipboard clipboard= Toolkit.getDefaultToolkit().getSystemClipboard();
+//        String CopiedText=(String) clipboard.getData(DataFlavor.stringFlavor);
 
  // String copyText=dropdown1.getCopyButton().getText();
-  System.out.println("The email copied is "+ CopiedText);
+//  System.out.println("The email copied is "+ CopiedText);
+        System.out.println(dropdown1.getInsertText());
 
     }
 }
