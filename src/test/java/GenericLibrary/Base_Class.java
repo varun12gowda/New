@@ -24,22 +24,34 @@ public class Base_Class {
     public SelectDropdown dropdown1;
     public SelectLanguageDropdown languageDropdown;
 
-    @BeforeSuite
-    public void setUp()  throws IOException {
 
-        String browser = utility.readingDataFromPropertyFile("browser");
+    @BeforeTest
+    @Parameters("browser")
+    public void setUp(@Optional("chrome") String browser) throws IOException {
 
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        } else {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+        switch (browser.toLowerCase()) {
+
+            case "edge":
+                //WebDriverManager.edgedriver().setup();
+
+                driver = new EdgeDriver();
+                break;
+
+            case "firefox":
+               // WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+
+            case "chrome":
+               // WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+
+            default:
+                throw new IllegalArgumentException(
+                        "Unsupported browser: " + browser
+                );
         }
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(utility.readingDataFromPropertyFile("url"));
@@ -54,7 +66,7 @@ public class Base_Class {
 //        }
 
 
-    @AfterSuite
+    @AfterTest
     public void tearDown() {
         driver.quit();
     }

@@ -2,11 +2,11 @@
 <suite name="Automation Suite" parallel="false">
 
     <test name="TempMail Tests">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="TempMail.CopyEmailTest"/>
             <class name="TempMail.VerifyLogo"/>
             <class name="TempMail.VerifyLanguageTest"/>
         </classes>
     </test>
-
 </suite>

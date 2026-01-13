@@ -8,12 +8,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class VerifyLanguageTest extends Base_Class {
-    WebDriver_Utility webUtil;
+    //WebDriver_Utility webUtil;
 
     @BeforeMethod
     public void initPageObject() {
         languageDropdown = new SelectLanguageDropdown(driver);
-       webUtil=new WebDriver_Utility(driver);
+       //webUtil=new WebDriver_Utility(driver);
     }
 
     @Test
@@ -60,9 +60,9 @@ public class VerifyLanguageTest extends Base_Class {
         String ExpectedGermanyTitle="Ihre neue Adresse";
 
         if(ActualGermanyTitle.equals(ExpectedGermanyTitle)){
-            System.out.println("The language is valid "+ ActualGermanyTitle);
+            System.out.println(STR."The language is valid \{ActualGermanyTitle}");
         }
-        Assert.assertEquals(ActualGermanyTitle,ExpectedGermanyTitle,"The language is invalid expected "+ ExpectedGermanyTitle);
+        Assert.assertEquals(ActualGermanyTitle,ExpectedGermanyTitle, STR."The language is invalid expected \{ExpectedGermanyTitle}");
     }
     @Test
     public void valudateUkraineLanguage(){
@@ -72,8 +72,8 @@ public class VerifyLanguageTest extends Base_Class {
         String ExpectedEnglandTitle="Ваша нова тимчасова адреса";
 
         if(ActualEnglandTitle.equals(ExpectedEnglandTitle)){
-            System.out.println("The language is valid "+ ActualEnglandTitle);
+            System.out.println(STR."The language is valid \{ActualEnglandTitle}");
         }
-        Assert.assertEquals(ActualEnglandTitle,ExpectedEnglandTitle,"The language is invalid expected "+ ExpectedEnglandTitle);
+        Assert.assertEquals(ActualEnglandTitle,ExpectedEnglandTitle, STR."The language is invalid expected \{ExpectedEnglandTitle}");
     }
 }
