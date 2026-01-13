@@ -27,9 +27,9 @@ public class Base_Class {
 
     @BeforeTest
     @Parameters("browser")
-    public void setUp(@Optional("chrome") String browser) throws IOException {
+    public void setUp( String browser) throws IOException {
 
-        switch (browser.toLowerCase()) {
+        switch (browser) {
 
             case "edge":
                 //WebDriverManager.edgedriver().setup();
