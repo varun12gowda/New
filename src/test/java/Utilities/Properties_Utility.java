@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Properties_Utility implements IConstant_Path {
+public class Properties_Utility extends IConstant_Path {
 
 
 

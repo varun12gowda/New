@@ -5,7 +5,6 @@ import ObjectRepo.SelectDropdown;
 import ObjectRepo.SelectLanguageDropdown;
 import ObjectRepo.VerifyLogo1;
 import Utilities.Properties_Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;

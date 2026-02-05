@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class LoginTest extends Base_Class {
 
-    @Test (enabled = true, groups = "smoke")
+    @Test (enabled = true, groups = "smoke",priority = 1)
     public void ValidateLoginModule() throws IOException, InterruptedException{
 
         login1.getUsername().sendKeys(utility.readingDataFromPropertyFile("Username"));
