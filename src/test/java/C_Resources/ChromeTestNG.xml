@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite" parallel="false">
+
+    <test name="TempMail Tests">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="language" value="EN"/>
+        <classes>
+
+            <class name="TestHomeScreen.InvalidEmailTest"/>
+
+
+        </classes>
+    </test>
+</suite>

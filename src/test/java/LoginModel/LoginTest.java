@@ -1,6 +1,6 @@
 package LoginModel;
 
-import GenericLibrary.Base_Class;
+import A_GenericLibrary.Base_Class;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

@@ -1,22 +1,25 @@
 package ObjectRepo;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SelectDropdown {
+
     public SelectDropdown(WebDriver driver){
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id="pre_rand")
     private WebElement refresh;
 
-    @FindBy(id = "pre_button")
+    @FindBy(id="pre_button")
     private WebElement insertText;
 
     @FindBy(xpath = "//button[@class=\"form-control dropdown-toggle\"]")
-    private WebElement dropDown ;
+    private WebElement dropDown;
 
     @FindBy(xpath = "//button[text()=\"chitthi.in\"]")
     private WebElement chittiDrop;
@@ -24,17 +27,21 @@ public class SelectDropdown {
     @FindBy(xpath = "//button[@class=\"btn btn-green mx-auto\"]")
     private WebElement copyButton;
 
-    public WebElement getInsertText(){return insertText;}
-    public WebElement getChitsDrop() {
-        return chittiDrop;
+    // Type email and select dropdown reliably
+    public void setCustomEmail(String email) throws InterruptedException {
+        refresh.click();
+
+      insertText.sendKeys(Keys.chord(Keys.CONTROL, "a")); // select all
+        insertText.sendKeys(Keys.DELETE); // delete existing text
+        insertText.sendKeys(email); // type new email
+        dropDown.click();
+        chittiDrop.click();
     }
-    public WebElement getDropDown(){
-        return dropDown;
+
+    // Click copy button
+    public String copyEmail() {
+        copyButton.click();
+        return insertText.getAttribute("value");
     }
-    public WebElement getCopyButton(){
-        return copyButton;
-    }
-    public WebElement getRefresh(){
-        return refresh;
-    }
+
 }
