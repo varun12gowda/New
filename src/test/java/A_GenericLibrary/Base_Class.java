@@ -1,9 +1,11 @@
 package A_GenericLibrary;
 
 import B_Utilities.InvalidEmailDataProvider;
+import B_Utilities.ScreenSizeUtil;
 import ObjectRepo.*;
 import B_Utilities.Properties_Utility;
 import TestHomeScreen.InvalidEmailTest;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -27,11 +29,12 @@ public class Base_Class {
     public WebDriver_Utility Webdriverutility;
     public ComposeEmail sendAnEmil;
     public VerifyEmailWithInValidInputs verifyEmailWithInValidInputs;
-
+    public DeleteEmail deleteEmail;
+    public ContactUs contactUs;
 
 
     @Parameters({"browser","language"})
-    @BeforeTest
+    @BeforeClass
     public void setUp( String browser, String language) throws IOException {
      Properties_Utility.setLanguage(language);
         switch (browser) {
@@ -58,9 +61,10 @@ public class Base_Class {
                 );
         }
         driver.manage().window().maximize();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        Webdriverutility = new WebDriver_Utility(driver);
+       // Webdriverutility = new WebDriver_Utility(driver);
     }
         @BeforeMethod
         public void navigateAndInit() throws IOException {
@@ -78,7 +82,7 @@ public class Base_Class {
 //        }
 
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
