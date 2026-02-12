@@ -4,6 +4,7 @@ import B_Utilities.InvalidEmailDataProvider;
 import B_Utilities.ScreenSizeUtil;
 import ObjectRepo.*;
 import B_Utilities.Properties_Utility;
+import ObjectRepoTestAutomation.Registration;
 import TestHomeScreen.InvalidEmailTest;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +32,7 @@ public class Base_Class {
     public VerifyEmailWithInValidInputs verifyEmailWithInValidInputs;
     public DeleteEmail deleteEmail;
     public ContactUs contactUs;
+    public Registration registration;
 
 
     @Parameters({"browser","language"})

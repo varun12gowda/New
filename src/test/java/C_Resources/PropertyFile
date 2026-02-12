@@ -1,9 +1,13 @@
 Username: v.kinf
 Password: kevnkw
-url: https://tempmail.plus/en/#!
+url: https://testautomationpractice.blogspot.com/
 browser: chrome
 Email: king
 recipientEmail: King@mailto.plus
 subject: Hello I have started doing Automation
 text: Please confirm weather the test scripts are correct.
-name: King
+Name: King
+Phone: 1234567890
+Address: abcdefghijklmnopqrstuvwxyz
+
+

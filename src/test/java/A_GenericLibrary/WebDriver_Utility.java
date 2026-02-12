@@ -34,7 +34,8 @@ public class WebDriver_Utility {
         Select select = new Select(dropdown);
         return select;
     }
-    public void handelingDropdown(WebElement dropdown, String value){
+    public void handelingDropdownbyValue(WebElement dropdown, String value){
+
         Select select=new Select(dropdown);
         try
         {
@@ -44,7 +45,7 @@ public class WebDriver_Utility {
             select.selectByValue(value);
         }
     }
-    public void handlingDropDown(WebElement dropdown, int index){
+    public void handlingDropDownByIndex(WebElement dropdown, int index){
         Select select=new Select(dropdown);
         select.selectByIndex(index);
     }
