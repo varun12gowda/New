@@ -17,11 +17,19 @@ public class WebDriver_Utility {
         Actions actions=new Actions(driver);
         actions.dragAndDrop(src, dest).perform();
     }
+    public void clickAndHoldSlider(WebDriver driver,WebElement slider, int pixelOffset){
+        Actions actions=new Actions(driver);
+        actions.clickAndHold(slider)
+        .moveByOffset(pixelOffset, 0)
+                .release()
+                .perform();
+    }
+
     public void RightClick(){
         Actions actions =new Actions(driver);
         actions.contextClick().perform();
     }
-    public void doubletap(WebElement element){
+    public void doubleTap(WebElement element){
         Actions actions=new Actions(driver);
         actions.doubleClick(element).perform();
     }

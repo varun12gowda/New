@@ -5,11 +5,11 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="language" value="EN"/>
 
-        <classes>
+        <packages>
 
-            <class name="TestAutomationPracticeTest.ResistrationTest"/>
+            <package name="TestAutomationPracticeTest"/>
 
 
-        </classes>
+        </packages>
     </test>
 </suite>

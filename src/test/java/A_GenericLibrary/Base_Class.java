@@ -4,7 +4,7 @@ import B_Utilities.InvalidEmailDataProvider;
 import B_Utilities.ScreenSizeUtil;
 import ObjectRepo.*;
 import B_Utilities.Properties_Utility;
-import ObjectRepoTestAutomation.Registration;
+import ObjectRepoTestAutomation.*;
 import TestHomeScreen.InvalidEmailTest;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +33,11 @@ public class Base_Class {
     public DeleteEmail deleteEmail;
     public ContactUs contactUs;
     public Registration registration;
+    public UploadSingleFile uploadsinglefile;
+    public DragTheFileAndDrop dragthefileanddropdown;
+    public Slider slider;
+    public MouseHoverDropdown mouseHoverDropdown;
+    public SimpleAlert simpleAlert;
 
 
     @Parameters({"browser","language"})

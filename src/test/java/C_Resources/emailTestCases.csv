@@ -1,0 +1,12 @@
+emailTest
+invalidemail.com
+user@com
+@domain.com
+user@.com
+userdomain.com
+user@@domain.com
+user@domain
+
+invalidfirstname 
+a
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
